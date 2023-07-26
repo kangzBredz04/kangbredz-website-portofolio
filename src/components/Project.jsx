@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { ThemeContext } from "../App";
+
 export default function Project() {
+  const { theme, setTheme } = useContext(ThemeContext);
   const projects = [
     {
       title: "PROJECT 1",
@@ -23,11 +27,16 @@ export default function Project() {
     },
   ];
   return (
-    <div className="md:px-10 px-7 my-8" id="projects">
-      <h1 className="text-primary font-semibold text-3xl mt-16">
+    <div
+      className={`md:px-10 px-7 ${
+        theme === "dark" ? "bg-[#1a1a29] text-white" : "bg-white text-black"
+      }`}
+      id="projects"
+    >
+      <h1 className="text-primary font-semibold text-3xl ">
         Featured projects:
       </h1>
-      <p className="my-3 text-white md:w-3/4 leading-[2]">
+      <p className="my-3  md:w-3/4 leading-[2]">
         I have worked on many projects over the course of being a Web Developer,
         here are a few of my live, real-world projects
       </p>
@@ -38,7 +47,11 @@ export default function Project() {
           return (
             <div
               key={index}
-              className="flex flex-col shadow-sm md:w-[343px] bg-[#31313F] p-4 rounded"
+              className={`flex flex-col shadow-sm md:w-[343px]  p-4 rounded ${
+                theme === "dark"
+                  ? "bg-[#070A52] text-white"
+                  : "bg-[#DBDFEA] text-black"
+              }`}
             >
               <a rel="noreferrer" className="mb-4 my-auto">
                 <img src={project.photo} alt={project.title} />
@@ -46,12 +59,18 @@ export default function Project() {
               <h3 className="text-primary font-semibold text-lg">
                 {project.title}
               </h3>
-              <p className=" text-white mt-1">{project.description}</p>
+              <p className="  mt-1">{project.description}</p>
               <div className="mt-5 flex">
                 <button className="btn transition-all duration-500 bg-primary py-2 px-6 rounded text-white hover:bg-white hover:text-primary">
                   About Projects
                 </button>
-                <button className="btn outline py-1.5 px-9 rounded border-none ml-5 text-white ">
+                <button
+                  className={`btn outline py-1.5 px-9 rounded border-none ml-5 ${
+                    theme === "dark"
+                      ? "bg-[#070A52] text-white"
+                      : "bg-[#DBDFEA] text-black"
+                  } `}
+                >
                   <a href={project.url}>View Projects </a>
                 </button>
               </div>

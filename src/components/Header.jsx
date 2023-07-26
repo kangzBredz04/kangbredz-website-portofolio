@@ -1,10 +1,15 @@
 import { Link, ScrollLink } from "react-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdDarkMode } from "react-icons/md";
+import { LuSunMedium } from "react-icons/lu";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
+import { ThemeContext } from "../App";
+import { useContext } from "react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { theme, setTheme } = useContext(ThemeContext);
   let Links = [
     { name: "Home", link: "home" },
     { name: "About", link: "about" },
@@ -12,8 +17,14 @@ export default function Header() {
     { name: "Contact", link: "contact" },
   ];
   return (
-    <div className="w-full max-w-7xl">
-      <div className="md:flex items-center justify-between py-4 md:px-10 px-7">
+    <div
+      className={`w-full max-w-7xl ${
+        theme === "dark"
+          ? "bg-[#1a1a29] text-white"
+          : "bg-white text-[#1a1a29]"
+      } `}
+    >
+      <div className="md:flex items-center justify-between py-4 md:px-10 px-7 ">
         {/* logo section */}
         <div className="font-bold text-2xl cursor-pointer flex items-center gap-1">
           <span className="text-primary hover:text-white">Kang Bred'z 04</span>
@@ -38,12 +49,23 @@ export default function Header() {
                 activeClass="active"
                 smooth={true}
                 spy={true}
-                className="text-white hover:text-primary duration-500"
+                className={` hover:text-primary duration-50`}
               >
                 {l.name}
               </Link>
             </li>
           ))}
+          <li className="md:ml-8 md:my-0 my-7 font-semibold md:mt-1">
+            {theme === "light" ? (
+              <button onClick={() => setTheme("dark")}>
+                <MdDarkMode />
+              </button>
+            ) : (
+              <button onClick={() => setTheme("light")}>
+                <LuSunMedium />
+              </button>
+            )}
+          </li>
         </ul>
         {/* button */}
       </div>
