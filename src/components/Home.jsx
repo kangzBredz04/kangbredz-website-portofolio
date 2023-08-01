@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { ThemeContext } from "../App";
+import { ThemeContext, translate } from "../App";
 
 export default function Home() {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme, language, setLanguage } = useContext(ThemeContext);
   return (
     <div
       className={` md:px-10  md:h-full bg-[#1a1a29] ${
@@ -16,20 +16,14 @@ export default function Home() {
         {/* Text */}
         <div
           className={`${
-            theme === "dark"
-              ? "bg-[#1a1a29] text-white"
-              : "bg-white text-black"
+            theme === "dark" ? "bg-[#1a1a29] text-white" : "bg-white text-black"
           }`}
         >
-          <h6 className="text-3xl mt-12">Hello I'm</h6>
+          <h6 className="text-3xl mt-12">{translate[language].hello}</h6>
           <h1 className="font-semibold text-3xl md:text-5xl my-4">
             Wahyu Jebred'z
           </h1>
-          <p className="md:w-96">
-            "Software development enthusiast that has a high learning curve,
-            seek best practices, stay up-to-date on emerging technologies, and
-            eager to learn something new
-          </p>
+          <p className="md:w-96">{translate[language].words}</p>
 
           {/* Buttons */}
           <div className="mt-5">
@@ -37,10 +31,10 @@ export default function Home() {
               className="btn bg-primary py-2 px-4 text-white rounded 
             hover:bg-white hover:text-primary transition-all duration-500"
             >
-              About Me
+              {translate[language].aboutMe}
             </button>
             <button className="btn outline px-6 py-1.5 rounded border-none  ml-5">
-              Projects
+              {translate[language].projek2}
             </button>
           </div>
         </div>

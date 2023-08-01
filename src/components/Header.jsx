@@ -7,9 +7,9 @@ import { useState } from "react";
 import { ThemeContext } from "../App";
 import { useContext } from "react";
 
-export default function Header() {
+export default function Header({ scrollRef }) {
   const [open, setOpen] = useState(false);
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme, language, setLanguage } = useContext(ThemeContext);
   let Links = [
     { name: "Home", link: "home" },
     { name: "About", link: "about" },
@@ -19,10 +19,9 @@ export default function Header() {
   return (
     <div
       className={`w-full max-w-7xl ${
-        theme === "dark"
-          ? "bg-[#1a1a29] text-white"
-          : "bg-white text-[#1a1a29]"
+        theme === "dark" ? "bg-[#1a1a29] text-white" : "bg-white text-[#1a1a29]"
       } `}
+      ref={scrollRef}
     >
       <div className="md:flex items-center justify-between py-4 md:px-10 px-7 ">
         {/* logo section */}
@@ -55,6 +54,23 @@ export default function Header() {
               </Link>
             </li>
           ))}
+          <li>
+            <select
+              value={language}
+              className={`${
+                theme === "dark"
+                  ? "bg-white text-black"
+                  : "bg-slate-800 text-white"
+              } rounded-lg p-1 ml-5`}
+              onChange={(e) => setLanguage(e.target.value)}
+            >
+              <option hidden selected>
+                Pilih Bahasa
+              </option>
+              <option value="id">Indonesia</option>
+              <option value="en">English</option>
+            </select>
+          </li>
           <li className="md:ml-8 md:my-0 my-7 font-semibold md:mt-1">
             {theme === "light" ? (
               <button onClick={() => setTheme("dark")}>
