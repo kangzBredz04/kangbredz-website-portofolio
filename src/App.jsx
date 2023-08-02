@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useRef } from "react";
 import { RxPinTop } from "react-icons/rx";
 import { useEffect } from "react";
+import ButtonScroll from "./components/ButtonScroll";
 
 export const ThemeContext = createContext({
   theme: null,
@@ -48,14 +49,6 @@ export default function App() {
   const [language, setLanguage] = useState("en");
   const scrollRef = useRef(null);
 
-  const handleScroll = (ref) => {
-    window.scrollTo({
-      top: ref.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
   useEffect(() => {
     console.log(
       `${
@@ -73,21 +66,21 @@ export default function App() {
           theme === "dark" ? "bg-[#1a1a29] text-white" : "bg-white text-black"
         }`}
       >
+        <ButtonScroll scrollRef={scrollRef} />
         <Header scrollRef={scrollRef} />
         <Home />
         <About />
         <Project />
         <Contact />
         <Footer />
-        {/* <ButtonScroll s /> */}
-        <div
+        {/* <div
           className="absolute right-2 bg-red-600 p-4  rounded-full cursor-pointer"
           onClick={() => {
             handleScroll(scrollRef.current);
           }}
         >
           <RxPinTop />
-        </div>
+        </div> */}
       </div>
     </ThemeContext.Provider>
   );
