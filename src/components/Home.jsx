@@ -46,21 +46,19 @@ export default function Home() {
 
           {/* Buttons */}
           <div className="mt-5 flex justify-center md:justify-start">
-            <button
-              className="btn bg-primary py-2 px-4 text-white rounded 
-            hover:bg-white hover:text-primary transition-all duration-500"
-            >
-              {translate[language].aboutMe}
+            <button className="btn bg-primary py-2 px-5 text-white w-44 hover:bg-white hover:text-primary transition-all duration-500 text-lg font-medium tracking-wide">
+              {translate[language].contact} Me
             </button>
-            <button className="btn outline px-6 py-1.5 rounded border-none ml-5">
+            {/* <button className="btn outline px-6 py-1.5 rounded border-none ml-5">
               {translate[language].projek2}
-            </button>
+            </button> */}
           </div>
         </div>
 
         {/* Image Kang Bred'z */}
-        <div className="order-first md:order-last relative hidden md:block w-1/3 mr-28">
-          <img src={kangBredzImage} alt="Kang Bred'z" />
+        <div className="order-first md:order-last relative hidden md:block w-1/3 mr-20">
+          {/* <img src={kangBredzImage} alt="Kang Bred'z" /> */}
+          <img src="KangzBredz.png" alt="Kang Bred'z" />
         </div>
       </div>
     </div>
