@@ -21,14 +21,22 @@ export default function Header({ scrollRef }) {
   return (
     <div
       className={`w-full max-w-7xl sticky top-0 z-50 ${
-        theme === "dark" ? "bg-[#1a1a29] text-white" : "bg-white text-[#1a1a29]"
+        theme === "dark" ? "bg-dark text-white" : "bg-white text-dark"
       }`}
       ref={scrollRef}
     >
       <div className="md:flex items-center justify-between py-4 md:px-10 px-7">
         {/* logo section */}
         <div className="font-bold text-2xl cursor-pointer flex items-center gap-1">
-          <span className="text-primary hover:text-white">KangzBred'z 04</span>
+          <span
+            className={`${
+              theme === "dark"
+                ? "text-primary hover:text-white"
+                : "text-primary hover:text-hover"
+            }`}
+          >
+            KangzBred'z 04
+          </span>
         </div>
         {/* Menu icon */}
         <div
@@ -36,7 +44,7 @@ export default function Header({ scrollRef }) {
           className={`${
             theme === "dark"
               ? "absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7 text-white"
-              : "absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7 text-black"
+              : "absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7 text-primary"
           }`}
         >
           {open ? <AiOutlineClose /> : <GiHamburgerMenu />}
@@ -44,7 +52,7 @@ export default function Header({ scrollRef }) {
         {/* linke items */}
         <ul
           className={`md:flex md:items-center md:pb-0 absolute md:static md:z-auto z-10 left-0 w-full md:w-auto mt-4 md:mt-0 md:pl-0 pl-9 ${
-            theme === "dark" ? "bg-[#1a1a29]" : "bg-white"
+            theme === "dark" ? "bg-dark" : "bg-white"
           } transition-all duration-500 ease-in cursor-pointer ${
             open ? "top-12" : "top-[-490px]"
           }`}
@@ -56,7 +64,11 @@ export default function Header({ scrollRef }) {
                 activeClass="active"
                 smooth={true}
                 spy={true}
-                className="hover:text-white text-primary duration-50"
+                className={`${
+                  theme === "dark"
+                    ? "hover:text-white text-primary"
+                    : "hover:text-hover text-primary"
+                } duration-50`}
               >
                 {l.name}
               </Link>
@@ -66,7 +78,11 @@ export default function Header({ scrollRef }) {
             className="md:ml-8 md:my-0 my-7 font-semibold relative"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <div className="flex items-center cursor-pointer text-primary hover:text-white">
+            <div
+              className={`flex items-center cursor-pointer text-primary ${
+                theme === "dark" ? "hover:text-white" : "hover:text-hover"
+              }`}
+            >
               {language === "id" ? "Indonesia" : "English"}
               {dropdownOpen ? (
                 <AiFillCaretUp className="ml-2" />
@@ -77,7 +93,7 @@ export default function Header({ scrollRef }) {
             {dropdownOpen && (
               <ul
                 className={`absolute top-8 left-0 ${
-                  theme === "dark" ? "bg-[#1a1a29]" : "bg-white"
+                  theme === "dark" ? "bg-dark" : "bg-white"
                 } border border-gray-300 rounded-md`}
               >
                 <li
@@ -108,11 +124,11 @@ export default function Header({ scrollRef }) {
           <li className="md:ml-8 md:my-0 my-7 font-semibold md:mt-1">
             {theme === "light" ? (
               <button onClick={() => setTheme("dark")}>
-                <MdDarkMode className="text-primary" />
+                <MdDarkMode className="text-primary" size={20} />
               </button>
             ) : (
               <button onClick={() => setTheme("light")}>
-                <LuSunMedium className="text-primary" />
+                <LuSunMedium className="text-primary" size={20} />
               </button>
             )}
           </li>
