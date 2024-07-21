@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { RxPinTop } from "react-icons/rx";
+import { IoIosArrowUp } from "react-icons/io";
 
 function ButtonScroll({ scrollRef }) {
   const handleScroll = (ref) => {
@@ -27,12 +27,12 @@ function ButtonScroll({ scrollRef }) {
           });
         };
       }, [])}
-      className="sticky top-3/4 left-full z-20 mr-5 -mb-12  w-12 h-12 bg-[#7C96AB] p-4 rounded-full cursor-pointer"
+      className="sticky top-3/4 left-full z-50  w-12 h-12 bg-transparent border-[1px] border-white  flex items-center justify-center  cursor-pointer"
       onClick={() => {
         handleScroll(scrollRef.current);
       }}
     >
-      <RxPinTop />
+      <IoIosArrowUp size={26} />
     </div>
   );
 }
