@@ -5,13 +5,13 @@ export default function Home() {
   const { theme, setTheme, language, setLanguage } = useContext(ThemeContext);
   return (
     <div
-      className={` md:px-10  md:h-full bg-[#1a1a29] ${
+      className={`  md:h-full bg-[#1a1a29] ${
         theme === "dark" ? "bg-[#1a1a29] text-white" : "bg-white text-black"
       } mb-10`}
       id="home"
     >
       <div
-        className={`w-full flex flex-col md:flex-row items-center justify-between `}
+        className={`m-10 flex flex-col md:flex-row items-center justify-between `}
       >
         {/* Text */}
         <div
@@ -23,7 +23,7 @@ export default function Home() {
           <h1 className="font-semibold text-3xl md:text-5xl my-4">
             Wahyu Jebred'z
           </h1>
-          <p className="md:w-96">{translate[language].words}</p>
+          <p className="md:w-96 leading-7">{translate[language].words}</p>
 
           {/* Buttons */}
           <div className="mt-5">
