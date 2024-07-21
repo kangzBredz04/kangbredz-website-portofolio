@@ -21,7 +21,7 @@ export const ThemeContext = createContext({
 
 export const translate = {
   en: {
-    hello: "Hello I'm",
+    hello: "Hello World !!!",
     words:
       "Software development enthusiast that has a high learning curve, seek best practices, stay up-to-date on emerging technologies, and eager to learn something new",
     aboutMe: "About Me",
@@ -32,7 +32,7 @@ export const translate = {
     projek2: "Projects",
   },
   id: {
-    hello: "Halo saya",
+    hello: "Halo Dunia !!!",
     words:
       "Penggemar pengembangan perangkat lunak yang memiliki kurva belajar tinggi, mencari praktik terbaik, selalu mengikuti perkembangan teknologi baru, dan bersemangat untuk mempelajari sesuatu yang baru",
     aboutMe: "Tentang saya",
