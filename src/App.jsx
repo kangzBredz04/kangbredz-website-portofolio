@@ -11,6 +11,7 @@ import { useRef } from "react";
 import { RxPinTop } from "react-icons/rx";
 import { useEffect } from "react";
 import ButtonScroll from "./components/ButtonScroll";
+import ProfileCard from "./components/ProfileCard";
 
 export const ThemeContext = createContext({
   theme: null,
@@ -62,14 +63,15 @@ export default function App() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme, language, setLanguage }}>
       <div
-        className={`max-w-7xl mx-auto ${
+        className={`max-w-7xl mx-5 ${
           theme === "dark" ? "bg-[#1a1a29] text-white" : "bg-white text-black"
         }`}
       >
         <ButtonScroll scrollRef={scrollRef} />
         <Header scrollRef={scrollRef} />
         <Home />
-        <About />
+        <ProfileCard />
+        {/* <About /> */}
         <Project />
         <Contact />
         <Footer />
