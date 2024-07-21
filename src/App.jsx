@@ -39,7 +39,7 @@ export const translate = {
     home: "Beranda",
     about: "Tentang",
     projek: "Projek",
-    contact: "Contact",
+    contact: "Kontak",
     projek2: "Projek",
   },
 };
