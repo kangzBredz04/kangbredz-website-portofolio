@@ -12,6 +12,7 @@ import { RxPinTop } from "react-icons/rx";
 import { useEffect } from "react";
 import ButtonScroll from "./components/ButtonScroll";
 import ProfileCard from "./components/ProfileCard";
+import { Analytics } from "@vercel/analytics/react";
 
 export const ThemeContext = createContext({
   theme: null,
@@ -83,6 +84,7 @@ export default function App() {
         >
           <RxPinTop />
         </div> */}
+        <Analytics />
       </div>
     </ThemeContext.Provider>
   );
