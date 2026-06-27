@@ -1,13 +1,666 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="id">
+
+<head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <title>KangBredz — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+    <!-- ─── NAV ─── -->
+    <nav id="navbar">
+        <a href="#home" class="nav-logo">
+            <span>kangz</span>Bredz<span style="color:var(--accent3)">.dev</span>
+            <div class="dot"></div>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact" class="nav-cta">Hire Me</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mob-link">About</a>
+        <a href="#experience" class="mob-link">Experience</a>
+        <a href="#projects" class="mob-link">Projects</a>
+        <a href="#contact" class="mob-link">Contact</a>
+    </div>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero" id="home">
+        <div class="hero-orb orb1"></div>
+        <div class="hero-orb orb2"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <div class="live-dot"></div>
+                Currently @ PT. Bank Tabungan Negara · Jakarta
+            </div>
+            <h1>
+                <span class="hero-name">Halo, Saya</span><br />
+                <span class="hero-role-wrap"><span class="hero-role">KangBredz</span></span>
+            </h1>
+            <div class="hero-typed"><span id="typedText"></span><span class="cursor">&nbsp;</span></div>
+            <p class="hero-desc">
+                Middleware Engineer dengan keahlian di <strong style="color:var(--text)">Java, API Integration, IBM
+                    Db2</strong>, dan pengembangan sistem perbankan.
+                Dari latar belakang akuntansi, saya membawa pemahaman bisnis yang kuat ke dalam software development —
+                menjembatani teknologi dengan proses finansial.
+            </p>
+            <div class="hero-cta">
+                <a href="#experience" class="btn-primary">Lihat Pengalaman →</a>
+                <a href="https://github.com/kangzBredz04" target="_blank" class="btn-ghost">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/wahyu1234/" target="_blank" class="btn-ghost">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <div class="stat-num count" data-target="13">0</div>
+                    <div class="stat-label">Projects Selesai</div>
+                </div>
+                <div>
+                    <div class="stat-num count" data-target="8">0</div>
+                    <div class="stat-label">Tech Stack</div>
+                </div>
+                <div>
+                    <div class="stat-num">1<span style="font-size:1.4rem">yr+</span></div>
+                    <div class="stat-label">Banking Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── ABOUT ─── -->
+    <section id="about">
+        <div class="section-label">About Me</div>
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <h2>Middleware Engineer<br />yang suka tantangan</h2>
+                <p>
+                    Saya adalah <strong>Middleware Engineer</strong> dengan pengalaman di sistem perbankan dan
+                    pembayaran,
+                    spesialisasi di <span class="highlight-chip">Java</span> <span class="highlight-chip">IBM Db2</span>
+                    <span class="highlight-chip">API Integration</span>.
+                </p>
+                <p>
+                    Berlatar belakang <strong>akuntansi</strong>, saya punya pemahaman bisnis yang unik dalam
+                    pengembangan software —
+                    memungkinkan saya menjembatani kebutuhan teknologi dengan proses finansial di lingkungan perbankan
+                    high-volume.
+                </p>
+                <p>
+                    Saya menikmati <strong>menyelesaikan production issues</strong>, mengoptimalkan pemrosesan
+                    transaksi, dan membangun
+                    middleware services yang andal. Kini aktif mengembangkan keahlian di <strong>payment
+                        systems</strong>,
+                    distributed applications, dan modern backend architecture.
+                </p>
+                <p>
+                    Di luar middleware, saya juga aktif sebagai <strong>Full-Stack Developer</strong> —
+                    membangun web apps dengan React, Express.js, dan berbagai database.
+                </p>
+            </div>
+            <div class="about-skills">
+                <div>
+                    <div class="skill-group-label">Middleware & Backend</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag green">Java</span>
+                        <span class="skill-tag green">IBM Db2</span>
+                        <span class="skill-tag green">REST API</span>
+                        <span class="skill-tag green">API Integration</span>
+                        <span class="skill-tag green">Core Banking</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Frontend</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag accent">React.js</span>
+                        <span class="skill-tag accent">TypeScript</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Tailwind</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Backend & Database</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag blue">Express.js</span>
+                        <span class="skill-tag blue">Node.js</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Supabase</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-group-label">Tools & Lainnya</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">Excel VBA</span>
+                        <span class="skill-tag">Akuntansi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── EXPERIENCE ─── -->
+    <section id="experience">
+        <div class="section-label reveal">Experience</div>
+        <h2 class="reveal">Pengalaman Profesional</h2>
+        <p class="section-sub reveal">Beroperasi di lingkungan perbankan high-volume dengan fokus pada keandalan dan
+            keamanan transaksi finansial.</p>
+
+        <div class="exp-timeline">
+
+            <!-- BTN -->
+            <div class="exp-item reveal">
+                <div class="exp-dot-wrap">
+                    <div class="exp-dot"></div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="exp-title">Middleware Engineer</div>
+                        <div class="exp-badge contract">Contract · Active</div>
+                    </div>
+                    <div class="exp-meta">
+                        <div class="exp-company">🏦 PT. Bank Tabungan Negara (BTN)</div>
+                        <div class="exp-period">Nov 2024 – Present · South Jakarta, Indonesia · On-site</div>
+                    </div>
+                    <p class="exp-desc">
+                        Berperan aktif dalam merancang, mengimplementasikan, dan mengoptimasi arsitektur integrasi
+                        sistem yang menjembatani core banking dengan ekosistem digital banking dan mitra pihak ketiga.
+                        Dipercaya mengelola lingkungan perbankan bertrafik tinggi, dengan fokus utama memastikan
+                        keamanan transmisi data, meminimalkan risiko downtime, dan menjaga keandalan infrastruktur
+                        teknis demi kelancaran transaksi finansial nasabah harian.
+                    </p>
+                    <div class="exp-skills">
+                        <span class="exp-skill-tag">IBM DB2</span>
+                        <span class="exp-skill-tag">Java</span>
+                        <span class="exp-skill-tag">API Integration</span>
+                        <span class="exp-skill-tag">Core Banking</span>
+                        <span class="exp-skill-tag">Digital Banking</span>
+                        <span class="exp-skill-tag">System Integration</span>
+                        <span class="exp-skill-tag">High Availability</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HCI -->
+            <div class="exp-item reveal">
+                <div class="exp-dot-wrap">
+                    <div class="exp-dot"></div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="exp-title">Middleware Engineer</div>
+                        <div class="exp-badge contract">Contract · Active</div>
+                    </div>
+                    <div class="exp-meta">
+                        <div class="exp-company">⚙️ PT. Hanoman Cendekia Interaktif</div>
+                        <div class="exp-period">Nov 2024 – Present · South Jakarta, Indonesia</div>
+                    </div>
+                    <p class="exp-desc">
+                        Bertanggung jawab merancang, mengimplementasikan, dan memelihara alur integrasi sistem yang
+                        menghubungkan aplikasi core banking dengan berbagai saluran digital banking serta pihak ketiga.
+                        Beroperasi di lingkungan perbankan dengan volume transaksi tinggi, memastikan konsistensi data
+                        dan arsitektur teknis yang andal demi kelancaran operasional finansial.
+                    </p>
+                    <div class="exp-skills">
+                        <span class="exp-skill-tag">IBM DB2 Connect</span>
+                        <span class="exp-skill-tag">JDK</span>
+                        <span class="exp-skill-tag">REST API</span>
+                        <span class="exp-skill-tag">Backend Development</span>
+                        <span class="exp-skill-tag">Transaction Processing</span>
+                        <span class="exp-skill-tag">Database Optimization</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── PROJECTS ─── -->
+    <section id="projects">
+        <div class="section-label reveal">Projects</div>
+        <h2 class="reveal">Yang Sudah Dibangun</h2>
+        <p class="section-sub reveal">13 project dari berbagai domain — middleware, sistem informasi, e-commerce, portal
+            lomba, sampai job platform.</p>
+
+        <div class="filter-bar reveal">
+            <button class="filter-btn active" data-filter="all">All (13)</button>
+            <button class="filter-btn" data-filter="java">Java</button>
+            <button class="filter-btn" data-filter="react">React</button>
+            <button class="filter-btn" data-filter="ts">TypeScript</button>
+            <button class="filter-btn" data-filter="c">C / Low-Level</button>
+            <button class="filter-btn" data-filter="vba">VBA</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+
+            <!-- CariKerja -->
+            <div class="project-card" data-tags="react ts java">
+                <div class="card-header">
+                    <div class="card-icon">💼</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/carikerja" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">CariKerja</div>
+                    <div class="card-desc">Platform job marketplace ala Glints — dual role pencari kerja & pemberi
+                        kerja. Posting lowongan, melamar, manajemen profil. Stack: React + TypeScript + Java +
+                        PostgreSQL.</div>
+                    <div class="card-tags">
+                        <span class="card-tag react">React.js</span>
+                        <span class="card-tag ts">TypeScript</span>
+                        <span class="card-tag java">Java</span>
+                        <span class="card-tag">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge flagship">🌟 Flagship Project</span></div>
+            </div>
+
+            <!-- Serikat BTN -->
+            <div class="project-card" data-tags="react java">
+                <div class="card-header">
+                    <div class="card-icon">📰</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/serikat-pekerja-btn" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Serikat Kerja BTN</div>
+                    <div class="card-desc">Portal berita dan artikel untuk serikat pekerja BTN. CMS sederhana — admin
+                        bisa publish & update berita, publik bisa membaca. Backend Supabase.</div>
+                    <div class="card-tags">
+                        <span class="card-tag react">React.js</span>
+                        <span class="card-tag">Express.js</span>
+                        <span class="card-tag">Supabase</span>
+                        <span class="card-tag">CMS</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Full-Stack · Banking</span></div>
+            </div>
+
+            <!-- Pushbike -->
+            <div class="project-card" data-tags="react">
+                <div class="card-header">
+                    <div class="card-icon">🚴</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/pushbike-portal" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Pushbike Portal</div>
+                    <div class="card-desc">Platform pendaftaran dan manajemen lomba pushbike. Dual role: peserta daftar
+                        lomba, panitia kelola event, kategori, dan data peserta. Real-time via Supabase.</div>
+                    <div class="card-tags">
+                        <span class="card-tag react">React.js</span>
+                        <span class="card-tag">Express.js</span>
+                        <span class="card-tag">Supabase</span>
+                        <span class="card-tag">Event Platform</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Full-Stack</span></div>
+            </div>
+
+            <!-- Auto Bredz -->
+            <div class="project-card" data-tags="react">
+                <div class="card-header">
+                    <div class="card-icon">🚗</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/auto-bredz-gallery" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Auto Bredz Gallery</div>
+                    <div class="card-desc">Landing page penjualan mobil dengan galeri kendaraan, filter pencarian, dan
+                        tampilan detail produk. Full-stack React + Express + SQL.</div>
+                    <div class="card-tags">
+                        <span class="card-tag react">React.js</span>
+                        <span class="card-tag">Express.js</span>
+                        <span class="card-tag">SQL</span>
+                        <span class="card-tag">Landing Page</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Full-Stack</span></div>
+            </div>
+
+            <!-- Islamic Apparel -->
+            <div class="project-card" data-tags="react">
+                <div class="card-header">
+                    <div class="card-icon">🕋</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/islamic-apparel-hub" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Islamic Apparel Hub</div>
+                    <div class="card-desc">Platform e-commerce pakaian muslim dengan manajemen produk, kategori,
+                        keranjang belanja, dan sistem order. Full-stack React + Express + SQL.</div>
+                    <div class="card-tags">
+                        <span class="card-tag react">React.js</span>
+                        <span class="card-tag">Express.js</span>
+                        <span class="card-tag">SQL</span>
+                        <span class="card-tag">E-Commerce</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Full-Stack</span></div>
+            </div>
+
+            <!-- Sahaba Fashion -->
+            <div class="project-card" data-tags="react">
+                <div class="card-header">
+                    <div class="card-icon">👗</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/sahaba-fashion" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Sahaba Fashion</div>
+                    <div class="card-desc">Toko fashion online dengan katalog produk, pencarian, manajemen keranjang,
+                        dan checkout. Stack serupa IAH namun dengan konsep brand berbeda.</div>
+                    <div class="card-tags">
+                        <span class="card-tag react">React.js</span>
+                        <span class="card-tag">Express.js</span>
+                        <span class="card-tag">SQL</span>
+                        <span class="card-tag">Fashion</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Full-Stack</span></div>
+            </div>
+
+            <!-- Web Kripik -->
+            <div class="project-card" data-tags="react">
+                <div class="card-header">
+                    <div class="card-icon">🥔</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/web-kripik-bu-manis" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Web Kripik Bu Manis</div>
+                    <div class="card-desc">Website UMKM keripik dengan katalog produk, informasi toko, dan sistem
+                        pemesanan online. Menggunakan Supabase sebagai backend-as-a-service.</div>
+                    <div class="card-tags">
+                        <span class="card-tag react">React.js</span>
+                        <span class="card-tag">Express.js</span>
+                        <span class="card-tag">Supabase</span>
+                        <span class="card-tag">UMKM</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Full-Stack</span></div>
+            </div>
+
+            <!-- Bredz Task -->
+            <div class="project-card" data-tags="react">
+                <div class="card-header">
+                    <div class="card-icon">📝</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/bredz-task" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Bredz Task</div>
+                    <div class="card-desc">Aplikasi notes/task manager dengan fitur CRUD lengkap. Dibangun dalam 2 jam
+                        sebagai ujian — bukti bahwa speed dan kualitas bisa jalan bareng.</div>
+                    <div class="card-tags">
+                        <span class="card-tag react">React.js</span>
+                        <span class="card-tag">Express.js</span>
+                        <span class="card-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge exam">⚡ Built in 2 Hours</span></div>
+            </div>
+
+            <!-- Prayer Attendance -->
+            <div class="project-card" data-tags="react">
+                <div class="card-header">
+                    <div class="card-icon">🕌</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/full-stack-prayer-attendance"
+                            target="_blank" title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Prayer Attendance</div>
+                    <div class="card-desc">Sistem absensi sholat berbasis web. Rekap kehadiran per waktu sholat dengan
+                        dashboard informatif. Ujian final, dibangun dalam 2 jam.</div>
+                    <div class="card-tags">
+                        <span class="card-tag react">React.js</span>
+                        <span class="card-tag">Express.js</span>
+                        <span class="card-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge exam">⚡ Built in 2 Hours</span></div>
+            </div>
+
+            <!-- Elections PUBPasim -->
+            <div class="project-card" data-tags="ts">
+                <div class="card-header">
+                    <div class="card-icon">🏛️</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/elections-pubpasim" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Elections PUBPasim</div>
+                    <div class="card-desc">Platform pemilihan online untuk organisasi kampus PUBPasim. Dibangun dengan
+                        TypeScript untuk type-safety, mendukung proses voting yang aman dan transparan.</div>
+                    <div class="card-tags">
+                        <span class="card-tag ts">TypeScript</span>
+                        <span class="card-tag">Pemilihan</span>
+                        <span class="card-tag">Web App</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Organisasi Kampus</span></div>
+            </div>
+
+            <!-- SIA Persediaan -->
+            <div class="project-card" data-tags="vba">
+                <div class="card-header">
+                    <div class="card-icon">📦</div>
+                    <div class="card-links">
+                        <a class="card-link"
+                            href="https://github.com/kangzBredz04/sistem-informasi-akuntansi-persediaan-barang-sarang-kapuyuak"
+                            target="_blank" title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">SIA Persediaan Barang — Sarang Kapuyuak</div>
+                    <div class="card-desc">Sistem informasi akuntansi persediaan barang untuk toko di Sumatera Barat.
+                        Otomatisasi pencatatan stok, keluar-masuk barang, dan laporan keuangan berbasis Excel VBA.</div>
+                    <div class="card-tags">
+                        <span class="card-tag vba">Microsoft VBA</span>
+                        <span class="card-tag">Excel</span>
+                        <span class="card-tag">Akuntansi</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Real Business Case</span></div>
+            </div>
+
+            <!-- Aplikasi Voting C -->
+            <div class="project-card" data-tags="c">
+                <div class="card-header">
+                    <div class="card-icon">🗳️</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/projekan-si-ganteng-jebredz"
+                            target="_blank" title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Aplikasi Voting Ketua PUB</div>
+                    <div class="card-desc">Aplikasi voting berbasis terminal untuk pemilihan ketua organisasi. Dibangun
+                        murni dengan bahasa C — tanpa framework, murni logika dan struktur data.</div>
+                    <div class="card-tags">
+                        <span class="card-tag c">C</span>
+                        <span class="card-tag">CLI App</span>
+                        <span class="card-tag">Algoritma</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Low-Level Programming</span></div>
+            </div>
+
+            <!-- Website Penjualan -->
+            <div class="project-card" data-tags="">
+                <div class="card-header">
+                    <div class="card-icon">🛒</div>
+                    <div class="card-links">
+                        <a class="card-link" href="https://github.com/kangzBredz04/projekan-html-wahyu" target="_blank"
+                            title="GitHub">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Website Penjualan</div>
+                    <div class="card-desc">Website e-commerce statis dengan tampilan produk dan keranjang belanja.
+                        Dibangun tanpa framework — pure HTML, CSS, dan JavaScript vanilla.</div>
+                    <div class="card-tags">
+                        <span class="card-tag">HTML</span>
+                        <span class="card-tag">CSS</span>
+                        <span class="card-tag">JavaScript</span>
+                        <span class="card-tag">E-Commerce</span>
+                    </div>
+                </div>
+                <div class="card-footer"><span class="card-badge">Static Web</span></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact">
+        <div class="contact-glow"></div>
+        <div class="contact-inner reveal">
+            <div class="section-label" style="justify-content:center">Contact</div>
+            <h2>Mari Ngobrol 👋</h2>
+            <p class="section-sub">Punya project seru, tawaran kolaborasi, atau sekadar mau diskusi soal middleware dan
+                payment systems? Hit me up!</p>
+            <div class="contact-links">
+                <a href="https://github.com/kangzBredz04" target="_blank" class="contact-link">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/wahyu1234/" target="_blank" class="contact-link">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <span>KangBredz © 2026</span>
+        <span style="color:var(--muted)">Middleware Engineer · Jakarta Metropolitan Area</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
