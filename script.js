@@ -59,7 +59,7 @@ const phrases = [
     'Middleware Engineer @ BTN',
     'Java · IBM Db2 · API Integration',
     'Backend Developer · React · Express',
-    'Bridging Finance × Technology'
+    'Bridging Finance x Technology'
 ];
 let phraseIdx = 0, charIdx = 0, deleting = false;
 const typedEl = document.getElementById('typedText');
